@@ -28,14 +28,14 @@ process(count name) multiple collections at a time by Specifying MongoDB input a
 
                 MultiCollectionSplitBuilder mcsb=new MultiCollectionSplitBuilder();
 		
-		mcsb.add(new MongoURI("mongodb://localhost:27017/"+collection[1]), (MongoURI)null, true, (DBObject)null                 ,(DBObject)null, (DBObject)null, false, null)
-	        .add(new MongoURI("mongodb://localhost:27017/"+collection[2]), (MongoURI)null, true,                                     (DBObject)null,(DBObject)null, (DBObject)null, false, null)
-		.add(new MongoURI("mongodb://localhost:27017/"+collection[3]), (MongoURI)null, true,                                     (DBObject)null,(DBObject)null, (DBObject)null, false, null)
-		.add(new MongoURI("mongodb://localhost:27017/"+collection[4]), (MongoURI)null, true,                                     (DBObject)null,(DBObject)null, (DBObject)null, false, null)
-		.add(new MongoURI("mongodb://localhost:27017/"+collection[5]), (MongoURI)null, true,                                     (DBObject)null,(DBObject)null, (DBObject)null, false, null)
-		.add(new MongoURI("mongodb://localhost:27017/"+collection[6]), (MongoURI)null, true,                                     (DBObject)null,(DBObject)null, (DBObject)null, false, null)
-		.add(new MongoURI("mongodb://localhost:27017/"+collection[7]), (MongoURI)null, true,                                     (DBObject)null,(DBObject)null, (DBObject)null, false, null)
-		 .add(new MongoURI("mongodb://localhost:27017/"+collection[8]), (MongoURI)null, true,                                     (DBObject)null,(DBObject)null, (DBObject)null, false, null)
+		mcsb.add(new MongoURI("mongodb://localhost:27017/"+collection[1]), (MongoURI)null, true, (DBObject)null,(DBObject)null, (DBObject)null, false, null)
+		    .add(new MongoURI("mongodb://localhost:27017/"+collection[2]), (MongoURI)null, true, (DBObject)null,(DBObject)null, (DBObject)null, false, null)
+		    .add(new MongoURI("mongodb://localhost:27017/"+collection[3]), (MongoURI)null, true, (DBObject)null,(DBObject)null, (DBObject)null, false, null)
+		    .add(new MongoURI("mongodb://localhost:27017/"+collection[4]), (MongoURI)null, true, (DBObject)null,(DBObject)null, (DBObject)null, false, null)
+		    .add(new MongoURI("mongodb://localhost:27017/"+collection[5]), (MongoURI)null, true, (DBObject)null,(DBObject)null, (DBObject)null, false, null)
+		    .add(new MongoURI("mongodb://localhost:27017/"+collection[6]), (MongoURI)null, true, (DBObject)null,(DBObject)null, (DBObject)null, false, null)
+		    .add(new MongoURI("mongodb://localhost:27017/"+collection[7]), (MongoURI)null, true, (DBObject)null,(DBObject)null, (DBObject)null, false, null)
+		    .add(new MongoURI("mongodb://localhost:27017/"+collection[8]), (MongoURI)null, true, (DBObject)null,(DBObject)null, (DBObject)null, false, null)
 		    .add(new MongoURI("mongodb://localhost:27017/"+collection[9]), (MongoURI)null, true, (DBObject)null,(DBObject)null, (DBObject)null, false, null)
 		    .add(new MongoURI("mongodb://localhost:27017/"+collection[0]), (MongoURI)null, true, (DBObject)null,(DBObject)null, (DBObject)null, false, null)
 		    .add(new MongoURI("mongodb://localhost:27017/"+collection[2]), (MongoURI)null, true, (DBObject)null,(DBObject)null, (DBObject)null, false, null);
