@@ -26,7 +26,7 @@ MultiCollectionSplitBuilder , MultiMongoCollectionSplitter and MongoConfigUtil t
 process(count name) multiple collections at a time by Specifying MongoDB input and output collections.
  
 
-MultiCollectionSplitBuilder mcsb=new MultiCollectionSplitBuilder();
+                MultiCollectionSplitBuilder mcsb=new MultiCollectionSplitBuilder();
 		
 		mcsb.add(new MongoURI("mongodb://localhost:27017/"+collection[1]), (MongoURI)null, true, (DBObject)null,(DBObject)null, (DBObject)null, false, null)
 		    .add(new MongoURI("mongodb://localhost:27017/"+collection[2]), (MongoURI)null, true, (DBObject)null,(DBObject)null, (DBObject)null, false, null)
@@ -45,17 +45,17 @@ MultiCollectionSplitBuilder mcsb=new MultiCollectionSplitBuilder();
         MongoConfigUtil.setSplitterClass(config, MultiMongoCollectionSplitter.class);
         
      
-		MongoConfigUtil.setOutputURI(config,"mongodb://localhost:27017/"+output );
+	MongoConfigUtil.setOutputURI(config,"mongodb://localhost:27017/"+output );
 		
 Access mongo Input with newApiHadoopRDD() method and then process with flatMap()
 inorder to list all the names from multiple collecitons into sigle list.
 Note: Here name is the key in mongodb input collection
 
-JavaPairRDD<Object, BSONObject> mongoRDD = sc.newAPIHadoopRDD(config,
+        JavaPairRDD<Object, BSONObject> mongoRDD = sc.newAPIHadoopRDD(config,
 				com.mongodb.hadoop.MongoInputFormat.class, Object.class,
 				BSONObject.class);
 				
-JavaRDD<String> words = mongoRDD
+        JavaRDD<String> words = mongoRDD
 				.flatMap(new FlatMapFunction<Tuple2<Object, BSONObject>, String>() {
 
 					@Override
@@ -85,7 +85,7 @@ JavaRDD<String> words = mongoRDD
 Then perform map() method on list of words so that we will get <String,Integer> pair as
 output. Then perform reduceByKey() method to caluculate count of words.	
 
-JavaPairRDD<String, Integer> ones = words
+            JavaPairRDD<String, Integer> ones = words
 				.map(new PairFunction<String, String, Integer>() {
 					public Tuple2<String, Integer> call(String s) {
 						
@@ -107,7 +107,7 @@ JavaPairRDD<String, Integer> ones = words
 Prepare a BsonObject with <word,count> as key and value pairs. Then save that bson object
 back to mongoDB.
 
-JavaPairRDD<Object, BSONObject> save = counts
+              JavaPairRDD<Object, BSONObject> save = counts
 				.map(new PairFunction<Tuple2<String, Integer>, Object, BSONObject>() {
 					@Override
 					public Tuple2<Object, BSONObject> call(
